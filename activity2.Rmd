@@ -1,0 +1,15 @@
+---
+output: html_document
+---
+
+<!--activity 2-->
+
+Although it easy to appreciate that $P_T$ is restricted to $0 \le P_T \le P_0$, how the number of photons changes as light passes through a sample is not immediately obvious. Here is a simple model we can use to help us think about the relationship between $P_T$ and $P_0$.
+
+Suppose our cuvette has a base that is $1 \text{ cm} \times 1 \text{ cm}$ in the $xy$-plane, and that we are interested only in the infinitesimally thin cross-section shown to the right. We let 1000 photons enter the left-side of the cuvette at the same time. We can imagine that a photon moves from left-to-right in a series of steps, with its probability of being absorbed at each step given by the slider. After 50 steps, the number of photons that exit the cuvette on the right is $P_T$.
+
+A2.1. Leave the radio button for visualizations set to "none" for now and gather values of $P_T$ for different probabilities of absorption. Examine your data and identify any interesting patterns you see between the probability of absorption and the value of $P_T$.
+
+A2.2. A cross-sectional plot shows the number of photons not yet absorbed at each of 50 equally spaced intervals as the photons move from left-to-right. Before you look at any cross-sectional plots, make predictions about what you will see when the probability of absorption is set to 0.00, 0.08, and 0.16. Check your predictions by turning on the cross-sectional plots. 
+
+A2.3. If we count the number of photons at each of the equally spaced intervals in a cross-sectional plot, then we can plot the number of photons as a function of distance traveled; this is a $P(d)$ vs. $d$ plot. Before your look at any $P(d)$ vs. $d$ plots, make predictions about the first three values for $P(d)$ and the shape of the plot when the probability of absorption is 0.00, 0.08, and 0.16. Check your predictions by turning on the $P(d)$ vs. $d$ plots.

@@ -1,0 +1,23 @@
+---
+output: html_document
+---
+
+<!--activity 3-->
+
+The figure to the right shows a plot, from Activity 2 in which we begin with 1000 photons with a probability of 0.08 that a photon is absorbed in any one of 50 increments in distance. The shape of this data suggests we can model the number of photons, $P(d)$, that remain at any distance, $d$, using an exponential using any of the following three forms
+
+$$\text{model 1: }P(d) = P_0 e^{-kd}$$
+
+$$\text{model 2: } \ln(P(d)) = \ln(P_0) - k \times d$$
+
+$$\text{model 3: } \ln \left( \frac{P(d)}{P_0} \right) = - k \times d$$
+
+where $P_0$ is the initial number of photons and $k$ is a decay constant that is related to the probability that a photon is absorbed.
+
+A3.1. Starting with the equation for model 1, derive the equations for the other two models. For each model, predict the shape of a plot that places $P(d)$, $\ln(P(d))$, or $\ln \left( \frac{P(d)}{P_0} \right)$ on the $y$-axis and $d$ on the $x$-axis.
+
+A3.2. Click on the radio buttons for each of the three models and extract from each the values for $P_0$ and for $k$. How do the estimates for $P_0$ and for $k$ compare to each other and to their expected values? Use the results for each model to predict the value of $P_T$ and compare your result to the value from Activity 2.
+
+A3.3. Given that $a$ and $C$ are constant for this data, we can express Beer's law as $A = k \times d$. Combine this equation with the equation for model 3 and report how absorbance, $A$, is related to $P(d)$ and $P_0$.
+
+A3.4. The ratio $\frac{P(d)}{P_0}$ is called the transmittance, $T$, which is limited to values between 0 and 1. If the absorbance of a sample is 0.250, what is the transmittance? If the transmittance of a sample is 0.10, what is the absorbance?

@@ -1,0 +1,17 @@
+---
+output: html_document
+---
+
+<!--activity 1-->
+
+The figure on the upper right shows eight cuvettes, each of which contains a solution of the same analyte in the same solvent; the concentration of the analyte, in part-per-million, appears above each cuvette. The cuvettes have a rectangular shape, with a base that is 1 cm by 1 cm, and each is filled to a depth of 1, 2, 3, or 4 cm. For each cuvette there is a side view (how the Spectronic 20D+ "views" a cuvette) and a top view (how Nessler's method "views" a cuvette). The number within each cuvette is the absorbance for either the side view or the top view.
+
+A1.1. You may recall that Beer's law describes how a sample's absorbance, $A$, is related to the analyte's concentration, $C$, the distance light travels through the sample, $b$, and the analyte's absorptivity, $a$, or its molar absorptivity, $\epsilon$. Show that the data in the figure is consistent with these equations for Beer's law: $A = abC$ or $A = \epsilon b C$.
+
+A1.2. What is the value for $a$, and its units, given the data in the figure?
+
+A1.3. Suppose we replace the analyte with one that has an absorptivity that is $2 \times$ smaller than the original analyte, but is present with a concentration that is $4 \times$ greater. What happens to the absorbance values?
+
+A1.4. The definitions for pathlength and concentration are self-explanatory. Provide a 1-2 sentence definition for absorbance and for absorptivity. 
+
+A1.5. Although we report absorbance, an instrument does not measure absorbance directly. Instead, it effectively counts the number photons that reach the detector in the absence of the analyte, $P_0$, and the number of photons that reach the detector in the presence of the analyte, $P_T$, where $P_0$ is the source's power and $P_T$ is the source's power after it is passes through the sample, as illustrated by the figure on the bottom right. Given a value for $P_0$, what limits are there on the value for $P_T$?

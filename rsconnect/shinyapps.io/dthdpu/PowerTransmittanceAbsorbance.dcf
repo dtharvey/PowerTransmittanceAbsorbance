@@ -1,0 +1,14 @@
+name: PowerTransmittanceAbsorbance
+title: PowerTransmittanceAbsorbance
+username:
+account: dthdpu
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7382004
+bundleId: 6428082
+url: https://dthdpu.shinyapps.io/PowerTransmittanceAbsorbance/
+when: 1666378448.9131
+lastSyncTime: 1666378448.9131
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: activity1.Rmd|activity2.Rmd|activity3.Rmd|beerslaw.R|introduction.Rmd|makeData.R|SpectrumMaker.R|wrapup.Rmd
