@@ -1,8 +1,8 @@
 # PowerTransmittanceAbsorbance
  
-A multi-page application in a more active-learning format that explores the relationship between the source's power, the solution's transmittance and absorbance, and Beer's law.  
+In this module, students explore the relationship between power, transmittance, and absorbance, ultimately deriving for themselves Beer's law (A = abC). 
 
-To run locally, install the package Shiny (if not already installed), and enter the following two lines into the console:
+To run locally, install the packages shiny and shinythemes (if not already installed), and enter the following two lines into the console:
 
 library(shiny)
 

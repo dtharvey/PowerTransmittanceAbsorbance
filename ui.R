@@ -3,9 +3,9 @@
 library(shiny)
 library(shinythemes)
 
-ui = navbarPage("AC 3.0: Power, Transmittance, Absorbance, and Beer's Law",
+ui = navbarPage("AC 3.0: Transmittance and Absorbance",
                 theme = shinytheme("journal"),
-                tags$head(
+                header = tags$head(
                   tags$link(rel = "stylesheet", 
                             type = "text/css", 
                             href = "style.css")
@@ -15,66 +15,46 @@ ui = navbarPage("AC 3.0: Power, Transmittance, Absorbance, and Beer's Law",
         fluidRow(
           column(width = 6,
             wellPanel(
-              includeHTML("introduction.html")
+              includeHTML("text/introduction.html")
                )
                ),
           column(width = 6,
            align = "center",
-           img(src = "nessler.png", height = "350px"),
+           img(src = "nessler_tubes.png", height = "350px"),
            br(),
            br(),
            img(src = "spec20.png", height = "350px")
                 ) # close column
                 ) # close fluidPanel         
                 ), # close tabPanel
-      tabPanel("Activity 1",
+      
+      tabPanel("Power and Transmittance",
                fluidRow(
                  column(width = 6,
                   wellPanel(
-                  includeHTML("activity1.html")
-                )),
-                 column(width = 6,
-                        align = "center",
-                        br(),
-                        br(),
-                        br(),
-                   img(src = "cuvettes.png"),
-                   br(),
-                   br(),
-                   br(),
-                   img(src = "bulb_to_eye.png", width = "300px")
-                )
-                )
-                ),
-      tabPanel("Activity 2",
-               fluidRow(
-                 column(width = 6,
-                  wellPanel(
-                    includeHTML("activity2.html")
+                    includeHTML("text/transmittance.html")
                     )),
                  column(width = 6,
                         align = "center",
-                   wellPanel(
                      splitLayout(
                        sliderInput("epsilon", "probability photon is absorbed",
                                    min = 0, max = 0.16, value = 0, step = 0.02,
-                                   width = "300px"),
+                                   width = "300px", ticks = FALSE),
                        radioButtons("plotoption", "type of visualization",
                                     choices = c("none", "cross-sectional", 
                                                 "P(d) vs. d"), 
                                     selected = "none", inline = FALSE,
                                     width = "100px")
-                   )
                    ),
-                   plotOutput("activty2plot", height = "500px")
+                   plotOutput("activty1plot", height = "500px")
                )
                )
                ),
-    tabPanel("Activity 3",
+    tabPanel("Modeling Transmittance",
              fluidRow(
                column(width = 6,
               wellPanel(
-                includeHTML("activity3.html")
+                includeHTML("text/model.html")
               )),
               column(width = 6,
                wellPanel(
@@ -84,19 +64,45 @@ ui = navbarPage("AC 3.0: Power, Transmittance, Absorbance, and Beer's Law",
                                             "model 3"), 
                                 selected = "none", inline = TRUE)
                ),
-                plotOutput("activity3plot", height = "300px"),
+                plotOutput("activity2plot", height = "300px"),
                 verbatimTextOutput("model")
               )
              )),
+    tabPanel("Absorbance",
+             fluidRow(
+               column(width = 6,
+                      wellPanel(
+                        includeHTML("text/absorbance.html")
+                      )),
+               column(width = 6,
+                      align = "center",
+                      selectInput("set_opt", "Choose Cuvette Set",
+                                  choices = c("Cuvette Key",
+                                              "Set 1", 
+                                              "Set 2",
+                                              "Set 3"),
+                                  selectize = FALSE),
+                      # img(src = "cuvettes_new.png", height = "700px"),
+                      imageOutput("sets", height = "500px"),
+                      br(),
+                      br(),
+                      br(),
+                      # img(src = "bulb_to_eye.png", width = "300px")
+               )
+             )
+    ),
     tabPanel("Wrapping Up",
       fluidRow(column(width = 6,
-        wellPanel(
-          includeHTML("wrapup.html")
+        wellPanel(id = "wrapuppanel",
+                  style = "overflow-y:scroll; max-height: 750px",
+          includeHTML("text/wrapup.html")
         )),
         column(width = 6, 
             br(),
             br(),
-            img(src = "Figure10.22.png", width = "100%")
+            br(),
+            br(),
+            img(src = "Figure10.22.png", width = "100%"),
           )
         
       ))

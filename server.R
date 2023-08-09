@@ -9,10 +9,21 @@ palette("Okabe-Ito")
 set.seed(13)
 
 shinyServer(function(input, output) {
-
-# code for activity 2
   
-output$activty2plot = renderPlot({
+  output$sets = renderImage({
+    if(input$set_opt == "Cuvette Key"){
+      list(src = "www/cuvette_key.png", height = "500px")}
+    else if(input$set_opt == "Set 1"){
+      list(src = "www/set_one.png", height = "500px")}
+    else if(input$set_opt == "Set 2"){
+      list(src = "www/set_two.png", height = "500px")}
+    else if(input$set_opt == "Set 3"){
+      list(src = "www/set_three.png", height = "500px")}
+  }, deleteFile = FALSE)
+
+# code for activity 1 (power and transmittance)
+  
+output$activty1plot = renderPlot({
   
   if (input$plotoption == "none"){
     epsilon = 1 - input$epsilon
@@ -64,20 +75,23 @@ output$activty2plot = renderPlot({
   
 })
 
-# code for activity 3
+# code for activity 2
 
-  output$activity3plot = renderPlot({
+  output$activity2plot = renderPlot({
     
     if (input$linearize == "none"){
+      old.par = par(mar = c(3,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       plot(x = seq(0,1,0.02), y = pd, 
            type = "p", col = 6, pch = 19,
-           xlim = c(0,1), xlab = "distance", 
+           xlim = c(0,1), xlab = "distance (cm)", 
            ylim = c(0,1000), ylab = "number of photons")
       grid()
+      par(old.par)
     } else
       
     if (input$linearize == "model 1"){
+      old.par = par(mar = c(3,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       x = seq(0,1,0.02)
       plot(x = x, y = pd, 
@@ -87,9 +101,11 @@ output$activty2plot = renderPlot({
       y = 999.9 * exp(-0.08339 * seq(0,50))
       lines(x = x, y = y, lwd = 2, col = 6)
       grid()
+      par(old.par)
     } else
     
     if (input$linearize == "model 2"){
+      old.par = par(mar = c(3,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       x = seq(0,1,0.02)
       plot(x = x, y = log(pd), 
@@ -99,9 +115,11 @@ output$activty2plot = renderPlot({
       y = 999.9 * exp(-0.08339 * seq(0,50))
       lines(x = x, y = log(y), lwd = 2, col = 6)
       grid()
+      par(old.par)
     } else
     
     if (input$linearize == "model 3"){
+      old.par = par(mar = c(3,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       x = seq(0,1,0.02)
       plot(x = x, y = log(pd/1000), 
@@ -111,6 +129,7 @@ output$activty2plot = renderPlot({
       y = 999.9 * exp(-0.08339 * seq(0,50))
       lines(x = x, y = log(y/1000), lwd = 2, col = 6)
       grid()
+      par(old.par)
     }
   })
   
@@ -146,6 +165,8 @@ output$activty2plot = renderPlot({
     model()
     
   })
+  
+
 
 })
 

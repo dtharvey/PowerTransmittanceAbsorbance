@@ -1,0 +1,34 @@
+---
+output: html_document
+---
+
+<!-- The following script makes it possible to use the mhchem -->
+<!-- latex package in a .Rmd file and to knit it into an .html file -->
+<!-- the font size is scaled to 90% to match text -->
+
+```{=html}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["[Contrib]/mhchem/mhchem.js"]
+}
+});
+MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90 }, 
+        SVG: { linebreaks: { automatic:true } }, 
+ });
+</script>
+```
+
+<!-- text for activity 1 -->
+
+
+In the introduction, we defined transmittance, $T$, as the ratio of the power of light that passes through a sample, $P_T$, to the power of light from the source, $P_0$. Here is a simple model, on the right, to help you think about the relationship between $P_T$ and $P_0$ as light travels through a sample Suppose the sample is placed in a rectangular cuvette with a base that is 1 cm by 1 cm in the $xy$-plane. Suppose, as well, that you are interested only in the infinitesimally thin cross-section in the $xy$-plane shown on the right. You let 1000 photons enter the left-side of the cuvette at the same time. As a photon moves from left-to-right in a series of steps, its probability of being absorbed at each step is set by the slider. After 50 steps, the number of photons that exit the cuvette on the right is $P_T$. Values of $P_0$ and $P_T$ are included in the figure.
+
+**Exercise 1.** Leave the radio button for type of visualization set to "none" and gather values of $P_T$ for probabilities of absorption of 0.00, 0.04, 0.08, 0.12, and 0.16. For each, calculate the transmittance. Examine your data and identify any interesting patterns you see between the probability of absorption and the value of $P_T$. What is the largest and the smallest possible values for $T$?
+
+**Exercise 2.** A cross-section plot shows---as small blue dots---those photons not yet absorbed as the photons move from left-to-right through 50 equally spaced intervals. Before you look at any cross-section plots, predict what you will see when the probability of absorption is set to 0.00, 0.04, 0.08, 0.12, and 0.16. Check your predictions by turning on and examining the cross-section plots. 
+
+**Exercise 3.** If you count the number of photons in each of the equally spaced intervals of the cross-section plot, then you can plot the number of photons as a function of the distance traveled; this is a $P(d)$ vs. $d$ plot. Before your look at these plots, make a prediction about the shape of the plot when the probability of absorption is 0.00, 0.04, 0.08, 0.12, and 0.16. Check your predictions by turning on and examining the $P(d)$ vs. $d$ plots.
+
+**Exercise 4.** Set the probability of absorption to 0.08 and examine the $P(d)$ vs. $d$ plot. The first four values of $P_T$ are 1000, 920, 846, and 779 (rounded to the nearest integer). Show that these values of $P_T$ are correct.

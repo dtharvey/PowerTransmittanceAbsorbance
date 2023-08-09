@@ -1,0 +1,33 @@
+---
+output: html_document
+---
+
+<!-- The following script makes it possible to use the mhchem -->
+<!-- latex package in a .Rmd file and to knit it into an .html file -->
+<!-- the font size is scaled to 90% to match text -->
+
+```{=html}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["[Contrib]/mhchem/mhchem.js"]
+}
+});
+MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90 }, 
+        SVG: { linebreaks: { automatic:true } }, 
+ });
+</script>
+```
+
+<!-- text for activity 3 -->
+
+The absorbance, $A$, of light by an analyte is a function of three other variables: the analyte's concentration, $C$, the distance light travels through the analyte's solution, $b$, and the analyte's ability, $a$, to absorb light of a particular wavelength; the last of these variables is the analyte's absorptivity. To understand the relationship between these variables, you will examine several sets of annotated cuvettes. The figure on the right provides a key to interpreting these annotations. Note that each cuvette has a side view with a pathlength of $b_1$ and a top view with a pathlength of $b_2$.
+
+**Exercise 1.** Use the pop-up menu to select Cuvette Set 1. Absorbance values---both when looking through the cuvette from the side and from the top---are positioned inside the cuvettes; the shading of the sample's color provides a visual measure of absorbance. Use the data in this figure to determine the proportional relationship between absorbance and path length in a form such as $A \propto b$ or $A \propto b^{-1}$, etc.
+
+**Exercise 2.** Use the pop-up menu to select Cuvette Set 2 and determine the relationship between absorbance and concentration.
+
+**Exercise 3.** Use the pop-up menu to select Cuvette Set 3 and determine the relationship between absorbance and absorptivity. Two of the cuvettes have the same analyte as the other sets (shown in blue) and two of the cuvettes have a different analyte (shown in orange).
+
+**Exercise 4.** Using your results from Exercises 1--3, write a single equation that expresses the absorbance as a function of absorptivity, path length, and concentration; this equation is known as Beer's law. 

@@ -1,0 +1,37 @@
+---
+output: html_document
+---
+
+<!-- The following script makes it possible to use the mhchem -->
+<!-- latex package in a .Rmd file and to knit it into an .html file -->
+<!-- the font size is scaled to 90% to match text -->
+
+```{=html}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    extensions: ["[Contrib]/mhchem/mhchem.js"]
+}
+});
+MathJax.Hub.Config({ 
+        "HTML-CSS": { scale: 90 }, 
+        SVG: { linebreaks: { automatic:true } }, 
+ });
+</script>
+```
+
+<!-- text for activity 2 -->
+
+The figure on the right shows a $P(d)$ vs. $d$ plot in which $P_0 = 1000$ photons and with a probability of 0.08 that a photon is absorbed in each of 50 increments in distance. The shape of this data suggests we can model the number of photons that remain at any distance, $P(d)$, using an exponential decay:
+$$\text{model 1: }P(d) = P_0 e^{-kd}$$
+where $P_0$ is the initial number of photons and $k$ is a decay constant that is related to the probability that a photon is absorbed.
+
+**Exercise 1.** Starting with the equation for model 1, derive the equations for model 2 and for model 3, which are two other ways to express the relationship between $P(d)$ and $D$. 
+
+$$\text{model 2: } \ln(P(d)) = \ln(P_0) - kd$$
+
+$$\text{model 3: } \ln \left( \frac{P(d)}{P_0} \right) = - kd$$
+
+**Exercise 2.** For each of these three models, predict the shape of a plot that places $P(d)$, $\ln(P(d))$, or $\ln \left( \frac{P(d)}{P_0} \right)$ on the $y$-axis and $d$ on the $x$-axis.
+
+**Exercise 3.** Click on the radio buttons for each model and extract from the regression  results values for $P_0$ and for $k$ (for model 2 and model 3, the value of $k$ is the coefficient assigned to $d$, which appears on the bottom right). How do the three sets of estimates for $P_0$ and for $k$ compare to each other? How do the three sets of estimates for $P_0$ and for $k$ compare to your expectations for their vaules?
