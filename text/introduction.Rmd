@@ -1,33 +1,17 @@
 ---
-output: html_document
+output: html_fragment
 ---
-
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-
-```{=html}
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-    extensions: ["[Contrib]/mhchem/mhchem.js"]
-}
-});
-MathJax.Hub.Config({ 
-        "HTML-CSS": { scale: 90 }, 
-        SVG: { linebreaks: { automatic:true } }, 
- });
-</script>
-```
 
 <!-- text for introduction -->
 
-Colorimetry is one example of a quantitative spectroscopic method of analysis. An early application is Nessler’s method for ammonia, $\ce{NH3}$, first introduced in the 1850s. Nessler found that adding an alkaline solution of $\ce{HgI2}$ and KI to a dilute solution of ammonia produced a yellow-to-reddish brown colloid in which the colloid’s color depends on the concentration of ammonia. By visually comparing the color of a sample to the colors of a series of standard solutions of $\ce{NH3}$, Nessler was able to determine the concentration of ammonia in the sample.
+$\require{mhchem}$Colorimetry is one example of a spectroscopic method of analysis. An early application is Nessler’s method for ammonia, $\ce{NH3}$, first introduced in the 1850s. Nessler found that adding an alkaline solution of $\ce{HgI2}$ and KI to a dilute solution of ammonia produced a yellow-to-reddish brown colloid in which the color depended on the concentration of ammonia. By visually comparing the color of a sample to the colors for a series of standard solutions of $\ce{NH3}$, Nessler was able to determine the concentration of ammonia in the sample.
 
-The figure on the upper-right shows Nessler’s method for comparing the color of two solutions. Light passes through equal heights of a sample and a standard, held in identical tubes. The analyst analyzes the solutions by looking down and through them toward the light source (the top view). To determine the analyte’s concentration, the analyst exchanges the standard until the color of the two solutions match.
+The figure on the upper-right illustrates Nessler’s method for comparing the color of two solutions. Light passes through equal heights of a sample and a standard, both in identical tubes. The analyst observes the solutions by looking down and through them toward the light source (the top view). To determine the analyte’s concentration, the analyst exchanges the standard solution until the color of the sample and the standard match.
 
-The figure on the lower-right is a Spectronic 20D+, a simple instrument that accomplishes the same thing as looking through a pair of Nessler tubes. A source of light passes through a monochromator that isolates a narrow range of wavelengths that, in turn, pass through a sample or a reference blank held in a cuvette. The detector is a photomultiplier tube. 
+The figure on the lower-right is a Spectronic 20D+, a simple instrument that accomplishes the same thing as a pair of Nessler tubes. A source of light passes through a monochromator that isolates a narrow range of wavelengths that, in turn, pass through a cuvette holding a sample or a reference blank. The Spectronic 20D+ measures the amount of light from the source that enters the sample, $P_0$, and the amount of light that emerges from the sample, $P_T$, where $P$ is power. The ratio of the transmitted power to the incident power is called transmittance, $T$.
 
-The Spectronic 20D+ measures the amount of light from the source that enters the sample, $P_0$, and the amount of light that emerges from the sample, $P_T$, where $P$ is power. The ratio of the transmitted power to the incident power is called transmittance, $T$; although we measure transmittance, we usually report the amount of light absorbed, $A$, by the sample.
-$$T = \frac{P_T}{P_0} \quad \quad \quad A = -\log(T)$$
-Thus, we measure power to determine transmittance, and use transmittance to report absorbance.
+$$T = \frac{P_T}{P_0}$$
+
+Although the instrument measures transmittance, we report the amount of light absorbed, $A$, where
+
+$$A = -\log(T)$$

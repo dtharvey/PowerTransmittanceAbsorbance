@@ -1,24 +1,16 @@
-library(shiny)
-library(shinythemes)
-
-# set colors
-palette("Okabe-Ito")
-
-# load in the any files needed by server
-
-set.seed(13)
+# server for transmittance and absorbance learning module
 
 shinyServer(function(input, output) {
   
   output$sets = renderImage({
     if(input$set_opt == "Cuvette Key"){
-      list(src = "www/cuvette_key.png", height = "500px")}
+      list(src = "www/cuvette_key.png", height = "95%")}
     else if(input$set_opt == "Set 1"){
-      list(src = "www/set_one.png", height = "500px")}
+      list(src = "www/set_one.png", height = "95%")}
     else if(input$set_opt == "Set 2"){
-      list(src = "www/set_two.png", height = "500px")}
+      list(src = "www/set_two.png", height = "95%")}
     else if(input$set_opt == "Set 3"){
-      list(src = "www/set_three.png", height = "500px")}
+      list(src = "www/set_three.png", height = "95%")}
   }, deleteFile = FALSE)
 
 # code for activity 1 (power and transmittance)
@@ -29,7 +21,7 @@ output$activty1plot = renderPlot({
     epsilon = 1 - input$epsilon
     photonsleft = round(1000 * (epsilon)^(seq(0,50)),0)
     plot(x = 1, y = -1, pch = 19, col = 1,
-         xlim = c(0,1), xlab = "distance (cm)", ylab = "", 
+         xlim = c(0,1), xlab = "distance (cm)", ylab = "",
          bty = "n", ylim = c(0,1), asp = 1, yaxt = "n")
     text(x = 0.01, y = 0.9, pos = 4, cex = 2,
          labels = bquote(P[0] == 1000))
@@ -68,7 +60,7 @@ output$activty1plot = renderPlot({
     photonsleft = round(1000 * (epsilon)^(seq(0,50)),0)
     plot(x = seq(0,1,0.02), y = photonsleft, 
          type = "p", col = 6, pch = 19,
-         xlim = c(0,1), xlab = "distance", 
+         xlim = c(0,1), xlab = "distance (cm)", 
          ylim = c(0,1000), ylab = "number of photons")
     grid()
   }
@@ -80,7 +72,7 @@ output$activty1plot = renderPlot({
   output$activity2plot = renderPlot({
     
     if (input$linearize == "none"){
-      old.par = par(mar = c(3,4,1,2))
+      old.par = par(mar = c(4,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       plot(x = seq(0,1,0.02), y = pd, 
            type = "p", col = 6, pch = 19,
@@ -91,12 +83,12 @@ output$activty1plot = renderPlot({
     } else
       
     if (input$linearize == "model 1"){
-      old.par = par(mar = c(3,4,1,2))
+      old.par = par(mar = c(4,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       x = seq(0,1,0.02)
       plot(x = x, y = pd, 
            type = "p", col = 6, pch = 19,
-           xlim = c(0,1), xlab = "distance", 
+           xlim = c(0,1), xlab = "distance (cm)", 
            ylim = c(0,1000), ylab = "number of photons")
       y = 999.9 * exp(-0.08339 * seq(0,50))
       lines(x = x, y = y, lwd = 2, col = 6)
@@ -105,12 +97,12 @@ output$activty1plot = renderPlot({
     } else
     
     if (input$linearize == "model 2"){
-      old.par = par(mar = c(3,4,1,2))
+      old.par = par(mar = c(4,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       x = seq(0,1,0.02)
       plot(x = x, y = log(pd), 
            type = "p", col = 6, pch = 19,
-           xlim = c(0,1), xlab = "distance", 
+           xlim = c(0,1), xlab = "distance (cm)", 
            ylim = c(0,log(1000)), ylab = "ln(number of photons)")
       y = 999.9 * exp(-0.08339 * seq(0,50))
       lines(x = x, y = log(y), lwd = 2, col = 6)
@@ -119,7 +111,7 @@ output$activty1plot = renderPlot({
     } else
     
     if (input$linearize == "model 3"){
-      old.par = par(mar = c(3,4,1,2))
+      old.par = par(mar = c(4,4,1,2))
       pd = round(1000 * (0.92)^(seq(0,50)),0)
       x = seq(0,1,0.02)
       plot(x = x, y = log(pd/1000), 

@@ -1,0 +1,15 @@
+---
+output: html_fragment
+---
+
+<!-- text for activity 3 -->
+
+The absorbance, $A$, of light by an analyte is a function of three variables: the analyte's concentration, $C$, the distance light travels through the analyte's solution, $b$, and the analyte's ability, $a$, to absorb light of a particular wavelength; the last of these variables is the analyte's absorptivity. You can determine the relationship between these variables by examining several sets of annotated cuvettes. The figure on the right provides a key to interpreting these annotations. Note that each cuvette has a fixed base that is $b_1 \times b_1$ and a fixed pathlength of $b_1$ for the side view; the top view has a variable pathlength equal to the depth, $b_2$, of solution in the cuvette.
+
+**Exercise 1.** Use the pop-up menu to select Cuvette Set $1$. Absorbance values---both when looking through the cuvette from the side and from the top---are provided inside the cuvettes; the shading of the sample's color provides a visual measure of relative absorbance. Use the data in this figure to determine the proportional relationship between absorbance and path length in a form such as $A \propto b$ or $A \propto b^{-1}$, etc.
+
+**Exercise 2.** Use the pop-up menu to select Cuvette Set $2$ and determine the proportional relationship between absorbance and concentration in a form such as $A \propto C$ or $A \propto C^{-1}$, etc.
+
+**Exercise 3.** Use the pop-up menu to select Cuvette Set $3$ and determine the proportional relationship between absorbance and absorptivity in a form such as $A \propto a$ or $A \propto a^{-1}$, etc. Two of the cuvettes have the same analyte as the other sets (shown in blue) and two of the cuvettes have a different analyte (shown in orange). What are the simularities and differences between the two analytes?
+
+**Exercise 4.** Using your results from Exercises $1$--$3$, write a single equation that expresses the absorbance as a function of absorptivity, path length, and concentration; this equation is known as Beer's law. 

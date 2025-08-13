@@ -1,0 +1,21 @@
+---
+output: html_fragment
+---
+
+<!-- text for activity 2 -->
+
+The figure on the right shows a plot of $P(d)$ vs. $d$ for which $P_0 = 1000$ photons and for which the probability that a photon is absorbed in each of $50$ increments in distance is $0.08$. The shape of this data suggests we can model the number of photons that remain at any distance, $P(d)$, using an exponential decay:
+
+$$\text{model 1: }P(d) = P_0 e^{-kd}$$
+
+where $P_0$ is the initial number of photons and $k$ is a decay constant that is related to the probability that a photon is absorbed.
+
+**Exercise 1.** Starting with the equation for model 1, derive the equations below for model $2$ and for model $3$, which are two other ways to express the relationship between $P(d)$ and $d$. 
+
+$$\text{model 2: } \ln(P(d)) = \ln(P_0) - kd$$
+
+$$\text{model 3: } \ln \left( \frac{P(d)}{P_0} \right) = - kd$$
+
+Leave the radio button for the type of model set to none and predict the shape of a plot that places $\ln(P(d))$ (for model $2$), or $\ln \left( \frac{P(d)}{P_0} \right)$ (for model $3$) on the $y$-axis and $d$ on the $x$-axis.
+
+**Exercise 2.** Click on the radio buttons for each model and extract from the regression  results values for $P_0$ and $k$. For model $1$, the values of $P_0$ and for $k$ are in the model's summary; for model $2$ and model $3$, the value that appears below $d$ in the summary table is the slope of the regression line. How do the three sets of estimates for $P_0$ and $k$ compare to each other? How do the three sets of estimates for $P_0$ and $k$ compare to your expectations for their values?

@@ -1,54 +1,54 @@
 ---
-output: html_document
+output: html_fragment
 ---
-
-<!-- The following script makes it possible to use the mhchem -->
-<!-- latex package in a .Rmd file and to knit it into an .html file -->
-<!-- the font size is scaled to 90% to match text -->
-
-```{=html}
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-    extensions: ["[Contrib]/mhchem/mhchem.js"]
-}
-});
-MathJax.Hub.Config({ 
-        "HTML-CSS": { scale: 90 }, 
-        SVG: { linebreaks: { automatic:true } }, 
- });
-</script>
-```
 
 <!-- text for wrapping up -->
 
 #### Deriving Beer's Law ($A = a B C$)
 
-The figure on the right shows a three-dimensional view of light passing through a solution. Light enters from the left with a power of $P_0$ and exits from the right with a power of $P_T$. We can imagine an infinitesimally thin cross-section of thickness $dx$. The light's power is $P$ as it enters the cross-section and is $P - dP$ as it exits the cross-section. The fractional decrease in power, $-\frac{dP}{P}$, is proportional to the sample's thickness, $dx$, and the analyte's concentration, $C$; thus 
+The figure on the right shows a three-dimensional view of light as it passes through a solution. Light enters from the left with a power of $P_0$ and exits from the right with a power of $P_T$. We can imagine an infinitesimally thin cross-section of thickness $dx$. The light's power is $P$ as it enters the cross-section and is $P - dP$ as it exits the cross-section. The fractional decrease in power, $-\frac{dP}{P}$, is proportional to the sample's thickness, $dx$, and to the analyte's concentration, $C$; thus 
+
 $$-\frac{dP}{P} = \alpha C dx$$
+
 where $\alpha$ is a proportionality constant. Integrating gives
+
 $$- \int_{P = P_0}^{P = P_T} \frac{dP}{P} = \alpha C \int_{x = 0}^{x = b} dx$$
+
 $$\ln \left( \frac{P_0}{P_T} \right) = \alpha b C$$
+
 Converting from $\ln$ to $\log$ and substituting in $A = -\log T = -\log \left( \frac{P_T}{P_0} \right)$ gives 
+
 $$A = a b C$$
+
 which is Beer's law.
 
 #### Is Absorptivity Given as $a$ or as $\epsilon$?
 
-The most common form of Beer's law in most analytical chemistry resources is $A = \epsilon b C$ instead of $A = a B C$. The difference between representing absorptivity as $a$ or $\epsilon$ is just a convention associated with units. As absorbance is a unitless number, the units of $a$ or $\epsilon$ depend on the units used for the pathlength, $b$, and the analyte's concentration, $C$. Pathlengths are usually given in cm. When the analyte's concentration is given in mol/L, then the absorptivity is called the molar absorptivity and represented using $\epsilon$ with units of cm^--1^ M^--1^, and when the analyte's concentration is given in other units, such as ppm, then the absorptivity is represented using $a$ with units of cm^--1^ ppm^--1^.
+The most common expression of Beer's law in most analytical chemistry resources is $A = \epsilon b C$ instead of $A = a B C$. The difference between representing absorptivity as $a$ or as $\epsilon$ is simply a convention associated with units. As absorbance is a unitless number, the units of $a$ or $\epsilon$ depend on the units used for the pathlength, $b$, and the analyte's concentration, $C$. Pathlengths are usually given in cm. When the analyte's concentration is given in mol/L, then the absorptivity is called the molar absorptivity and represented using $\epsilon$ with units of cm^--1^ M^--1^, and when the analyte's concentration is given in other units, such as ppm, then the absorptivity is represented using $a$ with units of cm^--1^ ppm^--1^.
 
 #### Why Isn't *k* the Same Thing as Probability?
 
-In defining models for transmittance, we described *k* as a decay constant related to the probability that a photon is absorbed and set the probability to 0.08. Modeling the data, however, gives values for *k* of 0.0834, not 0.0800. Why? The reason is that we used different equations to generate and to model the data. The data was generated using the equation $P(d) = P_0 (1 - p)^d$, where *p* is the probability the photon is absorbed in a particular increment, *d*. To model the data, we used the equation $P(d) = P_0 e^{-kd}$. Combining and simplifying these equations gives $(1 - p)^d = e^{-kd}$. Taking the natural logarithm of both sides and simplifying gives $\ln(1 - 0.08) = -k$, or $k = 0.08334$.
+In defining models for transmittance, we described *k* as a decay constant related to the probability that a photon is absorbed and set that probability to 0.08. Modeling the data, however, gives values for *k* of 0.0834, not 0.0800. Why? The reason is that we used different equations to generate and to model the data. The data was generated using the equation $P(d) = P_0 (1 - p)^d$, where *p* is the probability the photon is absorbed in a particular increment, *d*. To model the data, we used the equation $P(d) = P_0 e^{-kd}$. Combining and simplifying these equations gives 
+
+$$(1 - p)^d = e^{-kd}$$ 
+
+Taking the natural logarithm of both sides and simplifying gives $\ln(1 - 0.08) = -k$, or $k = 0.08334$.
+
+#### Is it Ln or Log?
+
+You may have noticed when working on the Modeling Transmittance tab that model $2$ and model $3$ are defined in terms of the natural (base $e$) logarithm, $\ln$, but the summaries of the models appear to use the base $10$ logarithm, $\log$, instead of $\ln$. This is an artifact of using $R$ to build these modules. In $R$, the natural logarithm is written as $\log$ and the base $10$ logarithm is writen as $\log10$.
 
 #### Power vs. Intensity vs. Number of Photons
 
-Power, $P$, is energy per unit time and intensity, $I$, is power per unit area. Although different measurements, they often are used interchangeably; defining transmittance as either $T = \frac{P_T}{P_0}$ or as $T = \frac{I_T}{I_0}$ leads to the same value for transmittance. As power increases with more photons, we can treat relative changes in power and intensity as a measure of relative changes in the number of photons.
+Power, $P$, is energy per unit time and intensity, $I$, is power per unit area. Although different measurements, they often are used interchangeably; defining transmittance as either $T = \frac{P_T}{P_0}$ or as $T = \frac{I_T}{I_0}$ leads to the same value for transmittance and, thus, absorbance. As power increases with more photons, we can treat relative changes in power and intensity as a measure of relative changes in the number of photons.
 
-#### Additional Coverage from *Analytical Chemistry 2.1*
+#### Additional Resources
 
 You can learn more about Beer's law in [Chapter 10.2 of Analytical Chemistry 2.1](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Analytical_Chemistry_2.1_(Harvey)/10%3A_Spectroscopic_Methods/10.02%3A_Spectroscopy_Based_on_Absorption), which is available from the [LibreText](https://libretext.org/) project.
 
 The thought experiment for simulating the transmittance and absorbance of light is drawn from [Robert W. Ricci, Mauri A. Ditzler, and Lisa P. Nestor "Discovering the Beer-Lambert Law, *J. Chem. Educ.*, **1994**, *71*, 983-985](https://doi.org/10.1021/ed071p983).
 
-Another useful simulation for exploring transmittance and absorbance is the article [Natalia Spitha, Pamela S. Doolittle, Amanda R. Buchberger, and Samuel Pazicni "Simulation-Based Guided Inquiry Activity for Deriving the Beer–Lambert Law", *J. Chem. Educ.*, **2021**, *98*, 1705-1711](https://doi.org/10.1021/acs.jchemed.0c01433).
+Another useful simulation for exploring transmittance and absorbance is in [Natalia Spitha, Pamela S. Doolittle, Amanda R. Buchberger, and Samuel Pazicni "Simulation-Based Guided Inquiry Activity for Deriving the Beer–Lambert Law", *J. Chem. Educ.*, **2021**, *98*, 1705-1711](https://doi.org/10.1021/acs.jchemed.0c01433).
+
+The original photo of the Spectronic 20D+ that appears in the module's introduction is from Wikimedia Commons; details about the photo (author, open-source licence) are available [here](https://commons.wikimedia.org/wiki/File:Spektrofotometr.JPG). The photo was cropped and cleaned up prior to its use in this module.
+
