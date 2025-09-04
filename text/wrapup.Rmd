@@ -36,7 +36,7 @@ Taking the natural logarithm of both sides and simplifying gives $\ln(1 - 0.08) 
 
 #### Is it Ln or Log?
 
-You may have noticed when working on the Modeling Transmittance tab that model $2$ and model $3$ are defined in terms of the natural (base $e$) logarithm, $\ln$, but the summaries of the models appear to use the base $10$ logarithm, $\log$, instead of $\ln$. This is an artifact of using $R$ to build these modules. In $R$, the natural logarithm is written as $\log$ and the base $10$ logarithm is writen as $\log10$.
+You may have noticed when working on the Modeling Transmittance tab that model $2$ and model $3$ are defined in terms of the natural (base $e$) logarithm, $\ln$, but the summaries of the models appear to use the base $10$ logarithm, $\log$, instead of $\ln$. This is an artifact of using $R$ to build this learning modules. In $R$, the natural logarithm is written as $\log$ and the base $10$ logarithm is written as $\log10$.
 
 #### Power vs. Intensity vs. Number of Photons
 

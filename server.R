@@ -33,7 +33,7 @@ output$activty1plot = renderPlot({
     lines(x = c(0,0), y = c(1,0), lwd = 2, col = 1)
   } else
   
-  if (input$plotoption == "cross-sectional"){
+  if (input$plotoption == "cross-section plot"){
     epsilon = 1 - input$epsilon
     photonsleft = round(1000 * (epsilon)^(seq(0,50)),0)
     plot(x = 1, y = -1, pch = 19, col = 1,

@@ -1,6 +1,6 @@
 # user interface for transmittance and absorbance learning module
 
-ui = navbarPage("AC 3.0: Transmittance and Absorbance",
+ui = navbarPage("AC 3.0: Power, Transmittance, and Absorbance",
                 theme = shinytheme("journal"),
                 header = tags$head(
                   tags$link(rel = "stylesheet", 
@@ -48,7 +48,7 @@ ui = navbarPage("AC 3.0: Transmittance and Absorbance",
                                    "probability photon is absorbed",
                                    min = 0, max = 0.16, value = 0, 
                                    step = 0.02,
-                                   width = "300px", ticks = FALSE),
+                                   width = "200px", ticks = FALSE),
                        img(src = "cuvette.png", height = "150px"),
                        radioButtons("plotoption", 
                                     "type of visualization",
