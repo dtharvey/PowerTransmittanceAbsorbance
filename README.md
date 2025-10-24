@@ -2,8 +2,6 @@
  
 In this module, students explore the relationship between power, transmittance, and absorbance, ultimately deriving for themselves Beer's law (A = abC). 
 
-To run locally, install the packages shiny and shinythemes (if not already installed), and enter the following two lines into the console:
+required packages: `shiny`, `shinythemes`
 
-library(shiny)
-
-shiny::runGitHub("PowerTransmittanceAbsorbance","dtharvey")
+to run locally in a browser window enter `shiny::runGitHub("PowerTransmittanceAbsorbance","dtharvey", launch.browser = TRUE)` in the console
